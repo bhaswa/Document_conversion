@@ -1,0 +1,22 @@
+.col-sm-4 {
+	cursor: pointer;
+	background-color:lavender;
+}
+
+.icon {
+	max-width:90px;
+	max-height:70px;
+}
+
+.col-sm-12{
+	justify-content: center;
+}
+
+.result{
+	visibility: hidden;
+}
+
+.out{
+	visibility: hidden;
+	border:1px solid #cecece;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document Conversion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="mystyle.css">
+  <script type="text/javascript" src="processFile.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <form id="myForm" enctype="multipart/form-data">
+  <div class="form-horizontal">
+  <h2>Upload your document</h2>
+  
+  <div class="row">
+    <div class="col-*-*"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><a onClick="samplehtmlUpload()"><img class="icon" src='images/html.png'>Sample.html</a></div>
+    <div class="col-sm-4"><a onClick="samplepdfUpload()"><img class="icon" src='images/docx.png'>Sample.docx</a></div>
+    <div class="col-sm-4"><a onClick="sampledocUpload()"><img class="icon" src='images/pdf.png'>Sample.pdf</a></div>
+  </div>
+  <br/>
+  
+   <div class="form-group">
+   <div class="row" style="background-color:lavender;" >
+   <div class="col-sm-12">
+   <h5 class="text-center">Upload a pdf, Microsoft™ Word(.doc, .docx) or HTML document. (The max file size is 1 MB.)</h5>
+   <label class="btn btn-primary" for="my-file-selector">
+    <input id="my-file-selector" name="upload" type="file" style="display: none" onchange="fileUpload()">
+    Choose your file
+	</label>
+	<span  id="upload-file-info"></span>
+   </div>
+    </div>
+    
+  </div>
+  
+  	<div id="res" class="result">
+  		<h2>Choose an output format</h2>
+		<div class="radio">
+			<label><input type="radio" name="optradio" value="json" onclick="convert()">Answer Units JSON</label>
+		</div>
+		<div class="radio">
+  			<label><input type="radio" name="optradio" value="html" onclick="convert()">Normalized HTML</label>
+		</div>
+		<div class="radio">
+  			<label><input type="radio" name="optradio" value="text" onclick="convert()">Plain Text</label>
+		</div>
+		<br/>
+	
+		<div id="output" class="out">
+			<ul class="nav nav-tabs">
+			   	<li><a data-toggle="tab" href="#i_doc">Your Document</a></li>
+			   	<li class="active"><a data-toggle="tab" href="#o_doc">Output Document</a></li>
+		   </ul>
+		   
+		   <div class="tab-content">
+		   		<div  id="i_doc" class="tab-pane fade">
+			   		<div id="in_doc">
+			   			<iframe id='iframe' style="width:100%;height:500px"> </iframe>
+			    	</div>
+			    	<button type="button" class="btn btn-default" onClick="saveinputarea()">Download</button>
+		   		</div>
+		    	<div id="o_doc" class="tab-pane fade in active">
+			   		<div id="out_doc">
+			   		</div>
+			   		<button type="button" class="btn btn-default" onClick="savetextarea()">Download</button>
+		   		</div>
+		 	</div>
+		</div>
+  </div>
+  </div>
+</form>
+</div>
+</body>
+</html>
